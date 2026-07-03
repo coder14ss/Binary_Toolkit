@@ -103,7 +103,7 @@ void processCSVConversions(const string& inputFile, const string& outputFile) {
         getline(ss, base2Str, ',');
         int base1 = stoi(base1Str);
         int base2 = stoi(base2Str);
-        if (!isValidNumber(numberStr, base1)) {
+        if (!isValidNumber(numberStr, base1)|| base2 < 2 || base2 > 20) {
             out << numberStr << "," << base1 << "," << base2 << ",INVALID,INVALID,False\n";
             continue;
         }
